@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+            function checkPart1(option){
+                var correctOptionId = "option2";
+                var btn = document.getElementById(option);
+                var ans = document.getElementById("answer1");
+                if (option == correctOptionId){
+                    btn.style.backgroundColor = "green";
+                    ans.innerHTML = "Correct!";
+                }
+                else{
+                    btn.style.backgroundColor = "red";
+                    ans.innerHTML = "Incorrect";
+                }
+                disableBtns("q1");
+            }
+
+
+            function disableBtns(classname){
+                var tags = document.querySelectorAll("."+classname);
+                for(var i = 0; i<tags.length ; i++){
+                    tags[i].setAttribute("disabled", "true");
+                }
+            }
+
+            function checkPart2(){
+                var correctAnswer = "japan";
+                var inputField = document.getElementById("input");
+                var ans = document.getElementById("answer2");
+
+                if (inputField.value.toLowerCase() == correctAnswer){
+                    inputField.style.backgroundColor = "green";
+                    ans.innerHTML = "Correct!";
+                }
+                else{
+                    inputField.style.backgroundColor = "red";
+                    ans.innerHTML = "Incorrect";
+                }
+                disableBtns("q2");
+            }
+
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                 <h3>Which is the capital city of India?</h3>
+                 <p id="answer1"></p>
+                 <button class="q1" id="option1" onclick="checkPart1(id)">Banglore</button>
+                 <button class="q1" id="option2" onclick="checkPart1(id)">Delhi</button>
+                 <button class="q1" id="option3" onclick="checkPart1(id)">Mumbai</button>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                 <h3>In which country there is a city named Tokyo</h3>
+                 <p id="answer2"></p>
+                 <input id="input">
+                 <button class="q2" onclick="checkPart2()">Check Answer</button>
+            </div>
+        </div>
+    </body>
+</html>
