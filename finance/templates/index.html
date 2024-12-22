@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+    <h1 class="mb-5">Portfolio</h1>
+    <table class="table table-bordered table-striped">
+        <thead class="table-light">
+            <tr>
+                <th>Symbol</th>
+                <th>Quantity</th>
+                <th>Avg.Buy Price</th>
+                <th>Current price</th>
+                <th>Total Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for holding in user_holdings %}
+                <tr>
+                    <td>{{ holding['share_symbol'] }}</td>
+                    <td>{{ holding['quantity'] }}</td>
+                    <td>{{ holding['average_price'] }}</td>
+                    <td>{{ holding['current_price'] }}</td>
+                    <td>{{ usd(holding['total_value']) }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2" class="table-light">Available Balance: {{ usd(user_table[0]["cash"]) }} </td>
+                <td colspan="3" class="total-cell">Grand Value <i>(balance + asset value)</i> : {{ usd(user_table[0]["cash"]+sum)}}</td>
+            </tr>
+        </tfoot>
+    </table>
+
+    {% if not user_holdings %}
+        <h5>You have No holdings</h5>
+    {% endif %}
+
+{% endblock %}
+

@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block titel %}
+    Sell
+{% endblock %}
+
+{% block main %}
+
+    <form action="/sell" method="POST">
+        <div class="input-group"></div>
+            <select required auto-focus class="form-select" name="symbol">
+                <option selected disabled hidden>Select the Share Symbol</option>
+                {% for holding in user_holdings %}
+                    <option value="{{ holding["share_symbol"] }}">{{ holding["share_symbol"] }}</option>
+                {% endfor %}
+            </select>
+            <input type="number" class="form-control" name="shares" placeholder="Enter Quantity" required>
+            <button class="btn btn-primary px-5" type="submit">Sell</button>
+          </div>
+    </form>
+
+{% endblock %}
