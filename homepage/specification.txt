@@ -1,0 +1,40 @@
+List of HTML tags used:
+    Header - to define the header
+    Main - to define the main content
+    Footer - to define the footer of the page
+    div - used to encapsulate a group of content
+    nav - to deine the naviagation unit
+    input - to take some input from the user
+    label - defines label for the input
+    ul - to create an unordered list
+    li - list items
+    a - anchor tag - used for linking one page with some other
+    h# - headings from 1-6
+    p - pargraph tag - used to define a pragraph
+    i - used to define some text in italic
+    svg - to define an vector graphic image
+    br - to give a line break
+    hr - to create a horizontal line
+    table - to deifne the table block
+    tr - used to deine rows of table
+    th - table heading
+    td - table data
+
+CSS
+    background color - to change background color
+    border - to defin the thickness, color and type of border
+    border-radius - to smoothen the edges
+    margin - distance from other elements
+    padding - extra space within the element
+    display - flex or block - block takes up the who space where as flex can be adjusted
+    font-family - to set the font
+    transition - to get effects
+
+javascript
+    only used to get and display date and time
+
+Bootstrap
+    used in contact page to create contact cards,
+    used to create table in education section
+
+
