@@ -1,0 +1,4 @@
+we can create a formula or a model that takes all the attributes in the songs and determine the users aura.
+It is difficult to make a model that can give us accurate results and the model will have some errors.
+
+It will be better if a expert sets values/threshold for each attributes of the songs and catergorize the aura based on his findings.
